@@ -1,3 +1,8 @@
+---
+layout: page
+title: vapecalc
+permalink: /projects/vapecalc/
+---
 # vapecalc
 
 Power calculator for coil and battery pairs.

@@ -1,8 +1,11 @@
 ---
+layout: page
 title: Projects
-date: 2018-01-06
+permalink: /projects/
+position: 10
+navlevel: header
+navtitle: Projects
 ---
-
 Only a few projects have been made available on this website, many more are
 available on [Github](https://github.com/saalaa).
 
