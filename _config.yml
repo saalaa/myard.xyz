@@ -12,9 +12,9 @@ linkedin_username: benoit-myard-805288156
 theme: jekyll-theme-kagami
 color_scheme: github
 
-destination: docs
-
 markdown: kramdown
+destination: docs
 exclude:
+  - README.md
   - Gemfile
   - Gemfile.lock
