@@ -9,8 +9,6 @@ lang: en
 github_username: saalaa
 linkedin_username: benoit-myard-805288156
 
-theme: jekyll-theme-kagami
-
 color_scheme: github
 
 markdown: kramdown
