@@ -1,0 +1,43 @@
+body {
+  border-top: 2px solid #000000;
+  color: #3c3c3c;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #3c3c3c;
+  font-size: 0.875em;
+  font-variant-caps: all-petite-caps;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.shy {
+  color: #a2a2a2;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+#main {
+  text-align: center;
+  padding-top: 10vh;
+}
+
+#main img {
+  width: 19vw;
+  max-width: 214px;
+
+  margin: 1vw;
+}
+
+#main p a+a {
+  margin-left: 1em;
+}
