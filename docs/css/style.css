@@ -53,6 +53,15 @@ p a+a {
 
 ul {
   text-align: left;
+  padding-left: 1em;
+}
+
+li {
+  list-style: none;
+}
+
+li:before {
+  content: "—";
 }
 
 #main {
