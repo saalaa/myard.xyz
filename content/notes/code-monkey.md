@@ -3,7 +3,7 @@ title: Code monkey
 date: 2025-01-23
 categories:
 - ai
-- phylosophy
+- philosophy
 ---
 
 Code monkey is a derogatory term for programmers hired to write simple and

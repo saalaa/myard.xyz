@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Phylosophy on myard.xyz</title>
-    <link>https://myard.xyz/categories/phylosophy/</link>
-    <description>Recent content in Phylosophy on myard.xyz</description>
+    <title>Philosophy on myard.xyz</title>
+    <link>https://myard.xyz/categories/philosophy/</link>
+    <description>Recent content in Philosophy on myard.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>johndoe@example.com (John Doe)</managingEditor>
     <webMaster>johndoe@example.com (John Doe)</webMaster>
     <copyright>Benoit Myard</copyright>
     <lastBuildDate>Thu, 23 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://myard.xyz/categories/phylosophy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://myard.xyz/categories/philosophy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code monkey</title>
       <link>https://myard.xyz/notes/code-monkey/</link>
