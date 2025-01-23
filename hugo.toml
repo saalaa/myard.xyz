@@ -5,6 +5,8 @@ theme = 'wow'
 
 copyright = 'Benoit Myard'
 
+publishDir = 'docs'
+
 [markup]
   [markup.highlight]
     noClasses = false
