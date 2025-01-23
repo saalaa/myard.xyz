@@ -1,0 +1,69 @@
+baseURL = 'https://myard.xyz/'
+languageCode = 'en-us'
+title = 'myard.xyz'
+theme = 'wow'
+
+copyright = 'Benoit Myard'
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = 'tokyonight-night'
+
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+
+[outputs]
+  home = ['html']
+  section = ['html', 'rss']
+  page = ['html']
+
+[menus]
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 10
+
+  [[menus.main]]
+    name = 'Photos'
+    pageRef = '/photos'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Notes'
+    pageRef = '/notes'
+    weight = 20
+
+  # [[menus.main]]
+  #   name = 'Posts'
+  #   pageRef = '/posts'
+  #   weight = 30
+
+[params]
+  dateFormat = ':date_long'
+
+  [params.author]
+    name = 'John Doe'
+    email = 'johndoe@example.com'
+
+  [params.home]
+    showRecentPhotos = true
+    recentPhotosLimit = 1
+
+    showRecentPosts = false
+    recentPostsLimit = 3
+
+    showRecentNotes = true
+    recentNotesLimit = 5
+
+  [params.photos]
+    pageSize = 10
+
+  [params.notes]
+    pageSize = 20
+    showCategoryFilter = true
+
+  [params.footer]
+    showThemeCredit = false

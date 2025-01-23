@@ -1,0 +1,64 @@
+<div class="not-prose">
+  <ol>
+    {{ range . }}
+      <li style="margin-top: 0.5em; margin-bottom: 1em;">
+        <article class="flex flex-row items-center">
+          <header class="grow">
+            <h3 class="!mb-1">
+              {{ if .Params.Photo }}
+                {{ $image := resources.Get .Params.Photo }}
+                {{ $resized := $image.Process "resize 600x" }}
+
+                <a
+                  href="{{ .RelPermalink }}"
+                  class="truncate text-sm underline decoration-slate-300 decoration-2 underline-offset-4 hover:decoration-inherit"
+                >
+
+                  <img src="{{ $resized.Permalink }}" />
+                </a>
+              {{ end }}
+
+              {{ if .Params.Photos }}
+                {{ $photo := index (.Params.Photos) 0}}
+                {{ $image := resources.Get $photo }}
+                {{ $resized := $image.Process "resize 600x" }}
+
+                <a
+                  href="{{ .RelPermalink }}"
+                  class="truncate text-sm underline decoration-slate-300 decoration-2 underline-offset-4 hover:decoration-inherit"
+                >
+                  <img src="{{ $resized.Permalink }}" />
+                </a>
+              {{ end }}
+            </h3>
+
+            {{- with .Date }}
+              {{- $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" -}}
+              {{- $dateHuman := . | time.Format (default ":date_long" site.Params.dateFormat) -}}
+              <div class="flex flex-row items-center space-x-4">
+                <time class="text-sm italic opacity-80" datetime="{{ $dateMachine }}"
+                  >{{ $dateHuman }}</time
+                >
+              </div>
+            {{- end }}
+          </header>
+
+          {{ with .Page.GetTerms "categories" }}
+            <ul class="flex flex-row items-center justify-end space-x-2">
+              {{ range . }}
+                <li>
+                  <a
+                    href="{{ .RelPermalink }}"
+                    class="taxonomy"
+                    title="See notes on {{ .LinkTitle }}"
+                    >{{ .LinkTitle }}</a
+                  >
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </article>
+      </li>
+    {{ end -}}
+  </ol>
+</div>
