@@ -47,8 +47,8 @@ publishDir = 'docs'
   dateFormat = ':date_long'
 
   [params.author]
-    name = 'John Doe'
-    email = 'johndoe@example.com'
+    name = 'Benoit Myard'
+    email = 'benoit@myard.xyz'
 
   [params.home]
     showRecentPhotos = true

@@ -6,15 +6,15 @@
     <description>Recent content in Ai on myard.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>johndoe@example.com (John Doe)</managingEditor>
-    <webMaster>johndoe@example.com (John Doe)</webMaster>
+    <managingEditor>benoit@myard.xyz (Benoit Myard)</managingEditor>
+    <webMaster>benoit@myard.xyz (Benoit Myard)</webMaster>
     <copyright>Benoit Myard</copyright>
     <lastBuildDate>Thu, 23 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://myard.xyz/categories/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code monkey</title>
       <link>https://myard.xyz/notes/code-monkey/</link>
-      <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate><author>johndoe@example.com (John Doe)</author>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate><author>benoit@myard.xyz (Benoit Myard)</author>
       <guid>https://myard.xyz/notes/code-monkey/</guid>
       <description>Code monkey is a derogatory term for programmers hired to write simple and repetitive code. It somewhat echoes the Infinite monkeys theorem albeit applied to narrower subject &amp;ndash; which has only become a reality thanks to code monkeys.&#xA;When asked, Karl Marx GPT, who is quite literal, had much to say:&#xA;The term &amp;ldquo;code monkey&amp;rdquo; is a colloquial expression in the tech world! It refers to a programmer or software developer whose job primarily involves writing and debugging code, often with minimal involvement in higher-level design, strategic decision-making, or creative problem-solving.</description>
     </item>
