@@ -1,0 +1,11 @@
+{{ define "main" }}
+  <h1>Tag: {{ .Title }}</h1>
+
+  {{- $posts := where .RegularPages "Section" "posts" -}}
+
+  {{ with $posts }}
+    <section>
+      {{ partial "list" . }}
+    </section>
+  {{ end }}
+{{ end }}

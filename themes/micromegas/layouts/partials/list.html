@@ -1,0 +1,54 @@
+{{- range . }}
+  <div class="card borderless shadows">
+    <div class="card-image">
+      {{ partial "images" . }}
+    </div>
+
+    <div class="card-header">
+      {{- if .Truncated }}
+        <a href="{{ .RelPermalink }}" class="btn btn-link float-right">More »</a>
+      {{- end }}
+
+      {{- if .LinkTitle }}
+        <div class="card-title h5">
+          <a href="{{ .RelPermalink }}" class="text-dark">{{ .LinkTitle }}</a>
+        </div>
+      {{- end }}
+
+      {{- if .Date }}
+        {{- $machine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
+        {{- $human := .Date | time.Format (default "Jan. 2, 2006 15:04" site.Params.dateFormat) -}}
+
+        <div class="card-subtitle">
+          <a href="{{ .RelPermalink }}" class="text-gray">
+            <span class="tooltip tooltip-right" data-tooltip="{{ $machine }}">
+              {{ $human }}
+            </span>
+          </a>
+        </div>
+      {{- end }}
+    </div>
+
+    {{- if or .Summary .Params.Tags }}
+      <div class="card-body markdown">
+        {{- if .Summary }}
+          <p>{{ .Summary }}</p>
+        {{ end }}
+
+        {{- if .Params.Tags }}
+          <p>
+            {{- range .Params.Tags }}
+              <a href="/tags/{{ . }}">#{{ . }}</a>
+            {{- end }}
+          </p>
+        {{- end }}
+
+        {{ partial "status" . }}
+      </div>
+    {{- else }}
+      <div class="card-body markdown">
+        {{ partial "status" . }}
+      </div>
+    {{- end }}
+  </div>
+{{- end }}

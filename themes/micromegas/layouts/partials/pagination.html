@@ -1,0 +1,82 @@
+{{- $page := . }}
+
+{{- with .Paginator }}
+  {{- $currentPageNumber := .PageNumber }}
+
+  <ul class="pagination my-4">
+    {{ with .First }}
+      {{ if ne $currentPageNumber .PageNumber }}
+        <li class="page-item">
+          <a href="{{ .URL }}">&laquo;</a>
+        </li>
+      {{- else }}
+        <li class="page-item disabled">
+          <a href="{{ .URL }}">&laquo;</a>
+        </li>
+      {{- end }}
+    {{- end }}
+
+    {{- with .Prev }}
+      <li class="page-item">
+        <a href="{{ .URL }}">&#8249;</a>
+      </li>
+    {{- else }}
+      <li class="page-item disabled">
+        <a href="{{ .URL }}">&#8249;</a>
+      </li>
+    {{- end }}
+
+    {{- $slots := 7 }}
+    {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
+    {{- $end := math.Min .TotalPages (sub (add $start $slots) 1) }}
+    {{- if lt (add (sub $end $start) 1) $slots }}
+      {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
+    {{- end }}
+
+    {{- if gt $start 1 }}
+      <li class="page-item">
+        <span>...</span>
+      </li>
+    {{- end }}
+
+    {{- range $k := seq $start $end }}
+      {{- if eq $.Paginator.PageNumber $k }}
+        <li class="page-item active">
+          <a href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}">{{ $k }}</a>
+        </li>
+      {{- else }}
+        <li class="page-item">
+          <a href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}">{{ $k }}</a>
+        </li>
+      {{- end }}
+    {{- end }}
+
+    {{- if lt $end .TotalPages }}
+      <li class="page-item">
+        <span>...</span>
+      </li>
+    {{- end }}
+
+    {{- with .Next }}
+      <li class="page-item">
+        <a href="{{ .URL }}">&#8250;</a>
+      </li>
+    {{- else }}
+      <li class="page-item disabled">
+        <a href="{{ .URL }}">&#8250;</a>
+      </li>
+    {{- end }}
+
+    {{- with .Last }}
+      {{- if ne $currentPageNumber .PageNumber }}
+        <li class="page-item">
+          <a href="{{ .URL }}">&raquo;</a>
+        </li>
+      {{- else }}
+        <li class="page-item disabled">
+          <a href="{{ .URL }}">&raquo;</a>
+        </li>
+      {{- end }}
+    {{- end }}
+  </ul>
+{{- end -}}

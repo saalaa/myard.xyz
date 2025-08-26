@@ -1,0 +1,90 @@
+{{ define "main" }}
+  {{ partial "images" . }}
+
+  <div class="mb-5">
+    <h1 class="my-0">{{ .Title }}</h1>
+
+    {{- if .Date }}
+      {{- $machine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
+      {{- $human := .Date | time.Format (default "Jan. 2, 2006 15:04" site.Params.dateFormat) -}}
+
+      <a href="{{ .RelPermalink }}" class="text-gray">
+        <span class="tooltip tooltip-right" data-tooltip="{{ $machine }}">
+          {{ $human }}
+        </span>
+      </a>
+    {{- end }}
+  </div>
+
+  <div class="markdown">
+    {{ .Content }}
+  </div>
+
+  {{- if .Params.tracks }}
+    <ol>
+      {{- range .Params.tracks }}
+        {{ $track := resources.Get .file }}
+
+        <li>
+          <button class="btn btn-player">
+            <span>Play</span>
+            <audio src="{{ $track.Permalink }}"></audio>
+          </button>
+
+          {{ .name }} 
+        </li>
+      {{- end }}
+    </ol>
+
+    <script>
+      let elems = document.getElementsByTagName('button');
+
+      let tracks = [];
+      for (let elem of elems) {
+        if (elem.className.indexOf('btn-player') !== -1) {
+          tracks.push(elem);
+        }
+      }
+
+      for (let track of tracks) {
+        track.addEventListener('click', function () {
+          for (let other of tracks) {
+            if (other == track) {
+              continue;
+            }
+
+            other.children[0].innerText = 'Play';
+            other.children[1].pause();
+          }
+
+
+          console.log(track.children[1].paused);
+
+          if (track.children[1].paused) {
+            track.children[0].innerText = 'Pause';
+            track.children[1].play();
+          } else {
+            track.children[0].innerText = 'Play';
+            track.children[1].pause();
+          }
+        });
+      }
+
+      for (let i = 0; i < elems.length; i++) {
+        let current = elems[i];
+        let next = elems[i+1];
+
+        if (!next) {
+          break;
+        }
+
+        current.addEventListener('ended', function () {
+          next.currentTime = 0;
+          next.play();
+        });
+      }
+    </script>
+  {{- end }}
+
+  {{ partial "status" . }}
+{{ end }}

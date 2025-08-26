@@ -1,11 +1,15 @@
 baseURL = 'https://myard.xyz/'
 languageCode = 'en-us'
 title = 'myard.xyz'
-theme = 'wow'
+theme = 'micromegas'
 
-copyright = 'Benoit Myard'
+author = 'Benoit Myard'
+copyright = 'Copyright © 2025, all rights reserved.'
 
 publishDir = 'docs'
+
+[taxonomies]
+  tag = 'tags'
 
 [markup]
   [markup.highlight]
@@ -29,23 +33,11 @@ publishDir = 'docs'
     weight = 10
 
   [[menus.main]]
-    name = 'Photos'
-    pageRef = '/photos'
+    name = 'Posts'
+    pageRef = '/posts'
     weight = 20
-
-  [[menus.main]]
-    name = 'Notes'
-    pageRef = '/notes'
-    weight = 20
-
-  # [[menus.main]]
-  #   name = 'Posts'
-  #   pageRef = '/posts'
-  #   weight = 30
 
 [params]
-  dateFormat = ':date_long'
-
   [params.author]
     name = 'Benoit Myard'
     email = 'benoit@myard.xyz'

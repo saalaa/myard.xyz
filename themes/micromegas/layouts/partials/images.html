@@ -1,0 +1,47 @@
+{{ if .Params.Photos }}
+  {{- if gt (len .Params.Photos) 8 }}
+    <div class="toast toast-error">
+      A maximum of 8 photos are supported in a carousel.
+    </div>
+  {{- end }}
+
+  <div class="carousel">
+    {{ range $i, $photo := .Params.Photos }}
+      {{ if eq $i 0 }}
+        <input class="carousel-locator" id="slide-{{ $i }}" type="radio"
+          name="carousel-radio" hidden="" checked="">
+      {{ else }}
+        <input class="carousel-locator" id="slide-{{ $i }}" type="radio"
+          name="carousel-radio" hidden="">
+      {{ end }}
+    {{ end }}
+
+    <div class="carousel-container">
+      {{ range .Params.Photos }}
+        {{ $image := resources.Get . }}
+
+        <figure class="carousel-item">
+          <img src="{{ $image.Permalink }}" class="img-fit-cover">
+        </figure>
+      {{ end }}
+    </div>
+
+    <div class="carousel-nav">
+      {{ range $i, $photo := .Params.Photos }}
+        <label class="nav-item text-hide c-hand" for="slide-{{ $i }}">
+          {{ $i }}
+        </label>
+      {{ end }}
+    </div>
+  </div>
+{{ else }}
+  {{ if .Params.Photo }}
+    {{ $image := resources.Get .Params.Photo }}
+
+    {{ if .Params.Responsive }}
+      <img src="{{ $image.Permalink }}" class="img-responsive">
+    {{ else }}
+      <img src="{{ $image.Permalink }}" class="img-fit-cover">
+    {{ end }}
+  {{ end }}
+{{ end }}

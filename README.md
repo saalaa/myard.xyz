@@ -6,10 +6,14 @@ Theme based on [til][1] for [Hugo][2], with [some modifications][3].
 [2]: https://gohugo.io
 [3]: https://github.com/saalaa/myard.xyz
 
-## Building
 
-    $ hugo
+## Usage
 
-## Running Locally
+    $ make
+    Available targets:
 
-    $ hugo serve --buildDrafts --buildFuture --disableFastRender --renderToMemory
+    build:  
+        Build the website into `docs/`
+
+    serve:  
+        Serve locally on http://localhost:1313

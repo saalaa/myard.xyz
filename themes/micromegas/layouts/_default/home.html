@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <article>
+    {{- with .Title }}
+      <header>
+        <h1>{{ . }}</h1>
+      </header>
+    {{ end -}}
+
+    {{- with .Content }}
+      <div class="text-large markdown">
+        {{ . }}
+      </div>
+    {{ end -}}
+  </article>
+{{ end }}
