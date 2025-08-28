@@ -1,0 +1,7 @@
+{{ if .Params.Photos }}
+  {{ range $i, $photo := .Params.Photos }}
+    {{ $image := resources.Get . }}
+
+    <img src="{{ $image.Permalink }}" class="img-fit-cover">
+  {{ end }}
+{{ end }}

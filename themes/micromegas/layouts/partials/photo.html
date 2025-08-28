@@ -1,0 +1,9 @@
+{{ if .Params.Photo }}
+  {{ $image := resources.Get .Params.Photo }}
+
+  {{ if .Params.Responsive }}
+    <img src="{{ $image.Permalink }}" class="img-responsive">
+  {{ else }}
+    <img src="{{ $image.Permalink }}" class="img-fit-cover">
+  {{ end }}
+{{ end }}
